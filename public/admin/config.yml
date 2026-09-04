@@ -1,0 +1,225 @@
+# Sveltia CMS – Inhaltsverwaltung für clean-express.ch
+#
+# Backend: GitHub. Der Login läuft über einen OAuth-Proxy (Cloudflare Worker
+# "sveltia-cms-auth"). Vor dem ersten Login: GitHub-OAuth-App anlegen, Worker
+# deployen und dessen URL unten bei `base_url` eintragen.
+# Schritt für Schritt in HANDOVER.md, Abschnitt 1.
+
+backend:
+  name: github
+  repo: Nick8952/clean-express-website
+  branch: main
+  base_url: https://REPLACE-WITH-SVELTIA-AUTH-WORKER-URL
+
+publish_mode: simple
+site_url: https://nick8952.github.io/clean-express-website
+display_url: https://nick8952.github.io/clean-express-website
+
+# Bilder liegen alle in public/img – falls der Kunde später eigene Fotos
+# ergänzen möchte (z. B. bei den Referenzen oder bei «Über uns»).
+media_folder: "public/img"
+public_folder: "/img"
+
+i18n:
+  structure: single_file
+  locales: [de]
+
+collections:
+  # ────────────────────────────────────── Firmendaten
+  - name: firmendaten
+    label: "Firmendaten & Einstellungen"
+    icon: home
+    editor: { preview: false }
+    files:
+      - name: site
+        label: "Firmendaten"
+        file: "data/site.json"
+        description: "Adresse, Telefon, E-Mail, Gründungsjahr. Diese Angaben erscheinen im Kopf, im Fuss und auf der Kontaktseite."
+        fields:
+          - name: demo
+            label: "Demo-Modus"
+            widget: boolean
+            default: true
+            hint: "EIN = die Seite wird von Google & Co. ausgeschlossen. Beim echten Start AUS schalten."
+          - name: web3formsKey
+            label: "Schlüssel fürs Kontaktformular"
+            widget: string
+            required: false
+            hint: "Kostenlos auf web3forms.com für clean.express@hotmail.com anfordern. Ohne Schlüssel zeigt die Kontaktseite statt des Formulars einen Hinweis mit Telefon/E-Mail."
+          - { name: name, label: "Firmenname (kurz)", widget: string }
+          - { name: legalName, label: "Firmenname (vollständig)", widget: string }
+          - { name: founder, label: "Inhaber/Gründer", widget: string }
+          - { name: foundedYear, label: "Gründungsjahr", widget: string }
+          - { name: tagline, label: "Leitsatz", widget: string }
+          - { name: blurb, label: "Kurzbeschreibung (Fusszeile & Google)", widget: text }
+          - name: availability
+            label: "Erreichbarkeit"
+            widget: string
+            hint: "Erscheint als Badge im Hero und in der Fusszeile."
+          - name: address
+            label: "Adresse"
+            widget: object
+            fields:
+              - { name: street, label: "Strasse & Nummer", widget: string }
+              - { name: zip, label: "PLZ", widget: string }
+              - { name: city, label: "Ort", widget: string }
+          - { name: phoneDisplay, label: "Telefon (Anzeige)", widget: string, hint: "z. B. 044 451 83 17" }
+          - { name: phoneTel, label: "Telefon (zum Anwählen)", widget: string, hint: "Internationales Format ohne Leerzeichen, z. B. +41444518317" }
+          - { name: faxDisplay, label: "Fax", widget: string, required: false }
+          - { name: email, label: "E-Mail", widget: string }
+          - { name: mapQuery, label: "Adresse für die Karte", widget: string }
+          - { name: region, label: "Einsatzgebiet", widget: string }
+          - { name: themeColor, label: "Farbe der Browser-Leiste (Hex)", widget: string }
+
+  # ────────────────────────────────────── Leistungen
+  - name: leistungen
+    label: "Leistungen"
+    icon: list
+    editor: { preview: false }
+    files:
+      - name: services
+        label: "Die fünf Leistungen"
+        file: "data/services.json"
+        description: "Titel, Beschreibung und Aufzählungen der Leistungen. Sie erscheinen auf der Startseite und auf der Seite «Dienstleistungen»."
+        fields:
+          - name: items
+            label: "Leistungen"
+            widget: list
+            label_singular: "Leistung"
+            summary: "{{fields.title}}"
+            fields:
+              - { name: slug, label: "Kennung (nicht ändern)", widget: string }
+              - name: icon
+                label: "Symbol"
+                widget: select
+                options: [spray, boxes, crane, key, sparkle]
+              - { name: title, label: "Titel", widget: string }
+              - { name: short, label: "Kurzbeschreibung (Karte)", widget: text }
+              - { name: body, label: "Beschreibungstext", widget: text, hint: "Ein Leerzeile zwischen zwei Textzeilen ergibt zwei Absätze." }
+              - name: bullets
+                label: "Aufzählung (optional)"
+                widget: list
+                required: false
+                field: { name: b, label: "Punkt", widget: string }
+
+  # ────────────────────────────────────── Referenzen
+  - name: referenzen
+    label: "Referenzen"
+    icon: star
+    editor: { preview: false }
+    files:
+      - name: references
+        label: "Kundenstimmen"
+        file: "data/references.json"
+        description: "Die Referenzkunden auf der Startseite."
+        fields:
+          - { name: heading, label: "Überschrift", widget: string }
+          - { name: lead, label: "Einleitung", widget: text }
+          - name: items
+            label: "Referenzen"
+            widget: list
+            label_singular: "Referenz"
+            summary: "{{fields.company}}"
+            fields:
+              - { name: company, label: "Firma / Ansprechperson", widget: string }
+              - { name: address, label: "Adresse", widget: string }
+              - { name: service, label: "Ausgeführte Leistung", widget: string }
+              - { name: stars, label: "Sterne (1–5)", widget: number, min: 1, max: 5, default: 5 }
+
+  # ────────────────────────────────────── Über uns
+  - name: ueberuns
+    label: "Über uns"
+    icon: user
+    editor: { preview: false }
+    files:
+      - name: about
+        label: "Über uns"
+        file: "data/about.json"
+        description: "Die Firmengeschichte und der Werdegang auf der Startseite."
+        fields:
+          - { name: heading, label: "Überschrift", widget: string }
+          - { name: body, label: "Text", widget: text, hint: "Eine Leerzeile zwischen zwei Textzeilen ergibt zwei Absätze." }
+          - name: stations
+            label: "Werdegang"
+            widget: list
+            label_singular: "Station"
+            summary: "{{fields.year}} – {{fields.role}}"
+            fields:
+              - { name: year, label: "Jahr(e)", widget: string }
+              - { name: role, label: "Funktion", widget: string }
+              - { name: place, label: "Ort / Firma", widget: string }
+
+  # ────────────────────────────────────── Menü
+  - name: navigation
+    label: "Menü & Fusszeile"
+    icon: menu
+    editor: { preview: false }
+    files:
+      - name: nav
+        label: "Menü"
+        file: "data/nav.json"
+        fields:
+          - name: primary
+            label: "Hauptmenü"
+            widget: list
+            label_singular: "Menüpunkt"
+            summary: "{{fields.label}}"
+            fields:
+              - { name: label, label: "Beschriftung", widget: string }
+              - { name: href, label: "Ziel", widget: string, hint: "z. B. /kontakt oder /#referenzen" }
+          - { name: ctaLabel, label: "Beschriftung Telefon-Knopf", widget: string }
+          - { name: ctaHref, label: "Ziel Telefon-Knopf", widget: string }
+          - name: footerLegal
+            label: "Rechtliches in der Fusszeile"
+            widget: list
+            label_singular: "Link"
+            summary: "{{fields.label}}"
+            fields:
+              - { name: label, label: "Beschriftung", widget: string }
+              - { name: href, label: "Ziel", widget: string }
+
+  # ────────────────────────────────────── Seiten-Texte
+  - name: seiten
+    label: "Seiten-Texte"
+    label_singular: "Seite"
+    icon: file
+    folder: "content/pages"
+    extension: md
+    format: frontmatter
+    create: false
+    delete: false
+    identifier_field: seoTitle
+    editor: { preview: false }
+    description: "Überschriften und Einleitungen der einzelnen Seiten."
+    fields:
+      - { name: seoTitle, label: "Titel für Browser-Tab & Google", widget: string }
+      - { name: seoDescription, label: "Beschreibung für Google", widget: text, hint: "Rund 150 Zeichen. Erscheint unter dem Titel in der Trefferliste." }
+      - name: hero
+        label: "Kopfbereich"
+        widget: object
+        required: false
+        fields:
+          - { name: eyebrow, label: "Überzeile", widget: string, required: false }
+          - { name: title, label: "Überschrift", widget: string, required: false, hint: "Nur Unterseiten. Bei der Startseite stattdessen «Titel Teil 1/2» unten verwenden." }
+          - { name: titlePrefix, label: "Titel Teil 1 (nur Startseite)", widget: string, required: false }
+          - { name: titleAccent, label: "Titel Teil 2, farbig (nur Startseite)", widget: string, required: false }
+          - { name: lead, label: "Einleitungstext", widget: text, required: false }
+
+  # ────────────────────────────────────── Rechtstexte
+  - name: rechtstexte
+    label: "Impressum & Datenschutz"
+    label_singular: "Rechtstext"
+    icon: shield
+    folder: "content/legal"
+    extension: md
+    format: frontmatter
+    create: false
+    delete: false
+    identifier_field: title
+    editor: { preview: false }
+    fields:
+      - { name: title, label: "Titel", widget: string }
+      - { name: subtitle, label: "Untertitel", widget: text, required: false }
+      - { name: seoTitle, label: "Titel für Browser-Tab", widget: string, required: false }
+      - { name: seoDescription, label: "Beschreibung für Google", widget: text, required: false }
+      - { name: body, label: "Inhalt", widget: markdown }

@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans text-step-0 antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-semibold tracking-[-0.02em] text-balance;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  p,
+  li {
+    @apply text-pretty;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  a {
+    overflow-wrap: break-word;
+  }
+
+  ::selection {
+    @apply bg-mint text-ocean-deep;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.ocean");
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .block-dark :focus-visible {
+    outline-color: theme("colors.mint");
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* ── Farbblöcke ─────────────────────────────────────────────── */
+  .block-light {
+    @apply bg-paper text-ink;
+  }
+
+  .block-foam {
+    @apply bg-foam text-ink;
+  }
+
+  .block-dark {
+    @apply bg-ocean-deep text-paper;
+  }
+
+  .block-dark h1,
+  .block-dark h2,
+  .block-dark h3,
+  .block-dark h4 {
+    @apply text-paper;
+  }
+
+  /* ── Glas-Kopfleiste (schwebende Pille) ───────────────────────── */
+  .glass-bar {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px) saturate(1.4);
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  /* ── Glaskarten ────────────────────────────────────────────────
+     Frostiger Hintergrund, feine helle Innenkante (shadow-glass) –
+     das durchgängige Bauteil der «Klinisch-Frisch»-Richtung.        */
+  .glass-card {
+    @apply rounded-card border border-white/70 shadow-glass;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.92), rgba(247, 250, 255, 0.75));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .block-dark .glass-card {
+    @apply border-white/10;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  }
+
+  /* ── 3D-Tilt-Karte ─────────────────────────────────────────────
+     Reines CSS-Transform, Werte kommen als Custom Properties von
+     TiltCard.tsx. Ein bewegliches Glanzlicht liegt als ::before über
+     der Karte und folgt dem Zeiger (--mx/--my).                    */
+  .tilt-card {
+    --rx: 0deg;
+    --ry: 0deg;
+    --mx: 50%;
+    --my: 50%;
+    --glow: 0;
+    perspective: 900px;
+  }
+
+  .tilt-card-inner {
+    position: relative;
+    height: 100%;
+    transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(0);
+    transition: transform 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    transform-style: preserve-3d;
+  }
+
+  .tilt-card-inner > * {
+    position: relative;
+    height: 100%;
+  }
+
+  .tilt-card-inner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: theme("borderRadius.card");
+    background: radial-gradient(
+      220px circle at var(--mx) var(--my),
+      rgba(255, 255, 255, 0.5),
+      transparent 60%
+    );
+    opacity: var(--glow);
+    transition: opacity 220ms ease;
+    pointer-events: none;
+  }
+
+  /* ── Buttons ─────────────────────────────────────────────────── */
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2
+           rounded-pill px-6 py-3 font-sans text-step--1 font-semibold
+           tracking-[0.01em] transition-all duration-200 ease-calm
+           cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply bg-ocean text-paper shadow-card;
+  }
+
+  .btn-primary:hover {
+    @apply shadow-lift;
+    background: #022680;
+    transform: translateY(-2px);
+  }
+
+  .btn-mint {
+    @apply bg-mint text-ocean-deep shadow-card;
+  }
+
+  .btn-mint:hover {
+    @apply shadow-lift;
+    transform: translateY(-2px);
+    background: #1fe0bd;
+  }
+
+  .btn-outline {
+    @apply border-2 border-ocean/25 bg-white/70 text-ocean;
+  }
+
+  .btn-outline:hover {
+    @apply border-ocean bg-ocean text-paper;
+  }
+
+  .btn-ghost {
+    @apply text-ocean hover:bg-mist;
+  }
+
+  .block-dark .btn-outline {
+    @apply border-white/25 bg-transparent text-paper;
+  }
+
+  .block-dark .btn-outline:hover {
+    @apply border-mint bg-mint text-ocean-deep;
+  }
+
+  /* ── Eyebrow / Kleinschrift-Label ────────────────────────────── */
+  .eyebrow {
+    @apply font-mono text-step--1 uppercase tracking-[0.18em] text-ocean/80;
+  }
+
+  .block-dark .eyebrow {
+    @apply text-mint/85;
+  }
+
+  /* ── Textlinks im Fliesstext ─────────────────────────────────── */
+  .link {
+    @apply underline decoration-mint decoration-2 underline-offset-4
+           transition-colors duration-150;
+  }
+
+  .link:hover {
+    @apply decoration-ocean;
+  }
+
+  .block-dark .link:hover {
+    @apply text-mint decoration-mint;
+  }
+
+  /* ── Redaktions-Typografie (Markdown aus dem CMS) ─────────────── */
+  .prose-ce > * + * {
+    @apply mt-5;
+  }
+
+  .prose-ce h2 {
+    @apply mt-12 text-step-2;
+  }
+
+  .prose-ce h3 {
+    @apply mt-9 text-step-1;
+  }
+
+  .prose-ce p,
+  .prose-ce li {
+    @apply text-step-0 leading-relaxed;
+  }
+
+  .prose-ce ul,
+  .prose-ce ol {
+    @apply space-y-2 pl-6;
+  }
+
+  .prose-ce ul {
+    @apply list-disc marker:text-mint-deep;
+  }
+
+  .prose-ce ol {
+    @apply list-decimal marker:font-mono marker:text-mint-deep;
+  }
+
+  .prose-ce a {
+    @apply link;
+  }
+
+  .prose-ce strong {
+    @apply font-semibold text-ocean;
+  }
+
+  .prose-ce hr {
+    @apply my-10 border-mist;
+  }
+
+  /* ── Aufzählungen im Leistungsstil ─────────────────────────────
+     Der Haken ist ein CSS-Pseudo-Element, kein Emoji.               */
+  .list-check {
+    @apply space-y-3;
+  }
+
+  .list-check > li {
+    @apply relative pl-8;
+  }
+
+  .list-check > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 13px;
+    height: 7px;
+    border-left: 2px solid theme("colors.ocean");
+    border-bottom: 2px solid theme("colors.ocean");
+    transform: rotate(-45deg);
+  }
+}
+
+@layer utilities {
+  /* Hairline im Marken-Mint – neben den Glaskarten das einzige
+     wiederkehrende Zierelement. */
+  .rule-mint {
+    @apply h-px w-24 bg-gradient-to-r from-mint via-mint/40 to-transparent;
+  }
+
+  .block-dark .rule-mint {
+    @apply from-mint via-mint/40 to-transparent;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "heading": "Referenzen",
+  "lead": "Auf dieser Seite finden Sie eine Auswahl unserer zufriedenen Kunden.",
+  "items": [
+    {
+      "company": "Papilio AG",
+      "address": "Bellerivestrasse 16, 8008 Zürich",
+      "service": "Büroreinigung",
+      "stars": 5
+    },
+    {
+      "company": "Prestige Immobilien AG",
+      "address": "Berninastrasse 29, 8042 Zürich",
+      "service": "Treppenhausreinigung",
+      "stars": 5
+    },
+    {
+      "company": "Architekt Herr Sieber",
+      "address": "Glattbachstrasse 119, 8044 Zürich",
+      "service": "Büro-Reinigung, Umbau- und Neubaureinigung",
+      "stars": 5
+    },
+    {
+      "company": "Bank Clariden Leu AG",
+      "address": "Bahnhofstrasse 32, 8070 Zürich",
+      "service": "Büro- und Spezialreinigung",
+      "stars": 5
+    },
+    {
+      "company": "Schaeppi Grundstücke",
+      "address": "Sihlfeldstrasse 10, 8036 Zürich",
+      "service": "Unterhalts- und Spezialreinigung",
+      "stars": 5
+    }
+  ]
+}

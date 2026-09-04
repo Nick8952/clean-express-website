@@ -1,0 +1,13 @@
+{
+  "primary": [
+    { "label": "Dienstleistungen", "href": "/dienstleistungen" },
+    { "label": "Referenzen", "href": "/#referenzen" },
+    { "label": "Kontakt", "href": "/kontakt" }
+  ],
+  "ctaLabel": "044 451 83 17",
+  "ctaHref": "tel:+41444518317",
+  "footerLegal": [
+    { "label": "Impressum", "href": "/impressum" },
+    { "label": "Datenschutz", "href": "/datenschutz" }
+  ]
+}

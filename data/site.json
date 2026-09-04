@@ -1,0 +1,23 @@
+{
+  "demo": true,
+  "web3formsKey": "",
+  "name": "Clean-Express",
+  "legalName": "Clean-Express Reinigung",
+  "founder": "Besnik Avdilji",
+  "foundedYear": "2006",
+  "tagline": "Perfekte Reinigung und termingerechte Ausführung",
+  "blurb": "Perfekte Reinigung und termingerechte Ausführung. Wir setzen auf Qualität und einen optimalen Kundenservice.",
+  "availability": "24 Stunden, 7 Tage die Woche für Sie erreichbar",
+  "address": {
+    "street": "Sternenstrasse 36a",
+    "zip": "8903",
+    "city": "Birmensdorf"
+  },
+  "phoneDisplay": "044 451 83 17",
+  "phoneTel": "+41444518317",
+  "faxDisplay": "044 451 83 17",
+  "email": "clean.express@hotmail.com",
+  "mapQuery": "Sternenstrasse 36a, 8903 Birmensdorf",
+  "region": "Zürich und Umgebung",
+  "themeColor": "#0132AF"
+}

@@ -1,0 +1,10 @@
+{
+  "heading": "Über uns",
+  "body": "Clean-Express Reinigung wurde von Besnik Avdilji im April 2006 gegründet. Der gebürtige Mazedonier wohnt seit 1990 in der Schweiz.\n\nNach erfolgreicher Tätigkeit in verschiedenen Reinigungsinstituten hat er beschlossen, seinen eigenen Betrieb zu eröffnen. Die Firma bietet Dienstleistungen für Privat- und Firmenkundinnen und Firmenkunden an.\n\nLangjährige Erfahrung, überdurchschnittliche Qualität, hohe Flexibilität, Zuverlässigkeit und kurze Reaktionszeiten zeichnen unsere Dienstleistungen aus. Wir sind rund um die Uhr für unsere Kunden da.",
+  "stations": [
+    { "year": "1995–1999", "role": "Vorarbeiter", "place": "Kübler Reinigung, Zürich" },
+    { "year": "1999–2000", "role": "Vorarbeiter", "place": "Erwin Jakober AG" },
+    { "year": "2000–2006", "role": "Objektleiter", "place": "Clean-Service AG" },
+    { "year": "seit 2006", "role": "Inhaber", "place": "Clean-Express Reinigung" }
+  ]
+}

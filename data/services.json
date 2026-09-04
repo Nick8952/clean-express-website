@@ -1,0 +1,50 @@
+{
+  "items": [
+    {
+      "slug": "unterhaltsreinigung",
+      "icon": "spray",
+      "title": "Unterhaltsreinigung",
+      "short": "Regelmässige Reinigung für Büro, Gastro, Werkstatt und Zuhause – einmalig oder im Abonnement.",
+      "body": "Wir bedienen Kunden aus dem Verwaltungs-, Büro- und Gastrobereich, Werkstätten, wie auch Privatkunden (Wohnungen, Ein- und Mehrfamilienhäuser).\n\nSeien es einmalige Kurzeinsätze oder wiederkehrende Unterhaltsarbeiten im Abonnement: Wir bieten für jeden Fall ein attraktives Preis-Leistungsverhältnis und garantieren eine einwandfreie Qualität.",
+      "bullets": [
+        "Grundreinigung",
+        "Treppenhausreinigung",
+        "Schaufenster- und Glasreinigung",
+        "Lamellenstoren- und Rolladenreinigung",
+        "Teppichreinigung"
+      ]
+    },
+    {
+      "slug": "umzugsreinigung",
+      "icon": "boxes",
+      "title": "Umzugsreinigung",
+      "short": "Pünktlich und zuverlässig – mit Abgabegarantie.",
+      "body": "Wir erledigen Ihre Umzugsreinigung pünktlich und zuverlässig, selbstverständlich mit Abgabegarantie.",
+      "bullets": []
+    },
+    {
+      "slug": "umbau-neubaureinigung",
+      "icon": "crane",
+      "title": "Umbau- und Neubaureinigung",
+      "short": "Bezugsbereit nach Bauarbeiten, termingerecht.",
+      "body": "Wir sorgen dafür, dass Ihr Objekt nach den Bauarbeiten termingerecht bezogen werden kann.",
+      "bullets": []
+    },
+    {
+      "slug": "hauswartung",
+      "icon": "key",
+      "title": "Hauswartung",
+      "short": "Zuverlässige Objektbetreuung, Garten- und Gerätepflege.",
+      "body": "Wir bieten eine zuverlässige Objektbetreuung, Garten- und Gerätepflege.",
+      "bullets": []
+    },
+    {
+      "slug": "spezialreinigung",
+      "icon": "sparkle",
+      "title": "Spezialreinigung",
+      "short": "Für aussergewöhnliche Einsätze – wir beraten Sie gerne.",
+      "body": "Kontaktieren Sie uns für aussergewöhnliche Einsätze. Gerne beraten wir Sie.",
+      "bullets": []
+    }
+  ]
+}
