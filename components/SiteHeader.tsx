@@ -3,23 +3,26 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { nav, site } from "@/lib/site";
+import { img, nav, site } from "@/lib/site";
+import DiamondMark from "./DiamondMark";
 import { IconClose, IconMenu, IconPhone } from "./Icons";
 
 /**
- * Typografische Wortmarke, neu gestaltet nach dem Original-Logo (blaues
- * "Clean-Express" + "Reinigung"-Zusatz) – als Schrift statt Rasterbild,
- * damit sie auf jeder Fläche/Auflösung scharf bleibt.
+ * Markenzeichen + Original-Logo: der facettierte Diamant von den
+ * Firmenfahrzeugen (DiamondMark.tsx) neben dem echten Original-Logo
+ * (public/img/logo-original.png, 1:1 von clean-express.ch). Auf hellem
+ * Grund funktioniert das Original-Logo farblich – im dunklen Footer trägt
+ * stattdessen eine typografische Variante den Namen (siehe SiteFooter.tsx).
  */
 function Wordmark() {
   return (
-    <span className="flex items-center gap-2 leading-none">
-      <span className="font-display text-[1.35rem] font-extrabold tracking-[-0.03em] text-ocean">
-        Clean<span className="text-mint-deep">·</span>Express
-      </span>
-      <span className="hidden rounded-pill bg-mist px-2.5 py-1 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-ocean/70 sm:inline">
-        Reinigung
-      </span>
+    <span className="flex items-center gap-2.5 leading-none">
+      <DiamondMark className="h-8 w-8 shrink-0" animated />
+      <img
+        src={img("logo-original.png")}
+        alt={`${site.legalName} – Logo`}
+        className="h-[26px] w-auto sm:h-[30px]"
+      />
     </span>
   );
 }

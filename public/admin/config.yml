@@ -66,6 +66,8 @@ collections:
           - { name: phoneDisplay, label: "Telefon (Anzeige)", widget: string, hint: "z. B. 044 451 83 17" }
           - { name: phoneTel, label: "Telefon (zum Anwählen)", widget: string, hint: "Internationales Format ohne Leerzeichen, z. B. +41444518317" }
           - { name: faxDisplay, label: "Fax", widget: string, required: false }
+          - { name: mobileDisplay, label: "Mobil / Natel (Anzeige)", widget: string, required: false, hint: "z. B. 079 830 16 83" }
+          - { name: mobileTel, label: "Mobil / Natel (zum Anwählen)", widget: string, required: false, hint: "Internationales Format ohne Leerzeichen, z. B. +41798301683" }
           - { name: email, label: "E-Mail", widget: string }
           - { name: mapQuery, label: "Adresse für die Karte", widget: string }
           - { name: region, label: "Einsatzgebiet", widget: string }

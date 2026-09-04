@@ -1,6 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="#0132AF"/>
-  <circle cx="16" cy="17" r="9" fill="#628FFF" fill-opacity="0.55"/>
-  <circle cx="13.5" cy="14.5" r="4.5" fill="#FFFFFF" fill-opacity="0.9"/>
-  <circle cx="22" cy="10" r="3" fill="#17C9AA"/>
+  <rect width="32" height="32" rx="7" fill="#0132AF"/>
+  <polygon points="11,7 21,7 27,14 16,27 5,14" fill="#EAF1FF"/>
+  <polygon points="11,7 5,14 13,14" fill="#628FFF"/>
+  <polygon points="21,7 19,14 27,14" fill="#0132AF"/>
+  <polygon points="5,14 16,27 13,14" fill="#0A1F52"/>
+  <polygon points="13,14 16,27 19,14" fill="#081B44"/>
+  <polygon points="19,14 16,27 27,14" fill="#1C3E8F"/>
 </svg>

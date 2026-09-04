@@ -6,6 +6,7 @@ import { getPage } from "@/lib/content";
 import { site } from "@/lib/site";
 
 import AboutStations from "@/components/AboutStations";
+import DiamondMark from "@/components/DiamondMark";
 import ReferenceWall from "@/components/ReferenceWall";
 import Reveal from "@/components/Reveal";
 import ServiceCard from "@/components/ServiceCard";
@@ -119,7 +120,10 @@ export default function HomePage() {
               </div>
             </div>
             <div>
-              <p className="eyebrow">Werdegang</p>
+              <div className="flex items-center gap-3">
+                <DiamondMark className="h-10 w-10 shrink-0" animated />
+                <p className="eyebrow">Werdegang</p>
+              </div>
               <div className="mt-4">
                 <AboutStations />
               </div>

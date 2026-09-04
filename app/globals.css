@@ -289,6 +289,26 @@
 }
 
 @layer utilities {
+  /* Glanz-Sweep für den Diamant (DiamondMark.tsx) – läuft alle 5s einmal
+     über die Facetten. prefers-reduced-motion greift automatisch über die
+     globale Regel oben (@layer base). */
+  .diamond-shine {
+    animation: diamond-shine 5s ease-in-out infinite;
+  }
+
+  @keyframes diamond-shine {
+    0%,
+    55% {
+      transform: skewX(-20deg) translateX(0);
+    }
+    75% {
+      transform: skewX(-20deg) translateX(160px);
+    }
+    100% {
+      transform: skewX(-20deg) translateX(160px);
+    }
+  }
+
   /* Hairline im Marken-Mint – neben den Glaskarten das einzige
      wiederkehrende Zierelement. */
   .rule-mint {

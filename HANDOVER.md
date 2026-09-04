@@ -233,15 +233,28 @@ geprüft: 47.35799 N, 8.45674 O, das ist Birmensdorf ZH). „Glatbachstrasse" �
 Die veraltete Schreibweise „FirmenkundInnen" wurde zu „Firmenkundinnen und
 Firmenkunden" ausgeschrieben.
 
+**Original-Logo und Diamant** (nachträglich ergänzt, nach Fahrzeugfoto von Nick)
+Das echte Original-Logo (`public/img/logo-original.png`, 1:1 von
+clean-express.ch) steht jetzt in der Kopfzeile. Der facettierte Diamant von
+den Firmenfahrzeugen ist als eigene Vektorgrafik nachgebaut
+(`components/DiamondMark.tsx`, kein Rasterbild – druckscharf, mit dezentem
+Glanz-Sweep) und erscheint als Markenzeichen in Kopfzeile, Fusszeile, Favicon
+und im Über-uns-Abschnitt. Im dunklen Footer trägt aus Kontrastgründen eine
+typografische Variante des Namens weiter (das navyblaue Original-Logo wäre
+auf dunklem Grund kaum lesbar) – der Diamant bleibt aber auch dort sichtbar.
+
+**Neu entdeckt** (Fahrzeugfoto): eine **Mobil-/Natel-Nummer 079 830 16 83**,
+die auf der Original-Website nicht stand. Jetzt auf der Kontaktseite, im
+Formular-Kontext und in den strukturierten Daten (JSON-LD) ergänzt. Ob diese
+Nummer auch für WhatsApp genutzt wird, müsste der Kunde bestätigen – dann
+liesse sich der Anruf-Knopf im Header leicht auf einen `wa.me`-Link umstellen.
+
 **Bewusst nicht übernommen**
-Das Original-Logo (Rasterbild) wurde durch eine typografische Wortmarke
-ersetzt, die die Originalfarbe (`#0132AF`, aus dem CSS der Original-Website)
-weiterträgt – gestochen scharf auf jeder Auflösung, ohne JPEG-Kompressionsrand.
 Die dekorativen Formen der Originalseite (abstrakte PNG/SVG-Grafiken ohne
 inhaltlichen Bezug) wurden nicht übernommen; die Original-Website hatte auch
-sonst keine echten Foto-Inhalte (kein Team-, Fahrzeug- oder Referenzbild) – die
-neue Seite arbeitet deshalb bewusst mit Typografie, eigens gezeichneten Icons
-und dem interaktiven Wasser-Hero statt mit Stockfotos.
+sonst keine echten Foto-Inhalte (kein Team- oder Referenzbild) – die neue
+Seite arbeitet deshalb bewusst mit Typografie, eigens gezeichneten Icons und
+dem interaktiven Wasser-Hero statt mit Stockfotos.
 
 **Neu geschrieben oder ergänzt – vor dem Go-Live vom Kunden freigeben lassen**
 - Die Kennzahlenzeile und die CTA-Texte auf der Startseite

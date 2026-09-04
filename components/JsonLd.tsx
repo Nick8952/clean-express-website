@@ -14,8 +14,10 @@ export default function JsonLd() {
     alternateName: site.name,
     description: site.blurb,
     url: SITE_URL,
+    logo: `${SITE_URL}/img/logo-original.png`,
+    image: `${SITE_URL}/img/logo-original.png`,
     email: site.email,
-    telephone: site.phoneTel,
+    telephone: [site.phoneTel, site.mobileTel].filter(Boolean),
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",

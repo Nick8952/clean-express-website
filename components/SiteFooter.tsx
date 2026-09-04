@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { addressLine, nav, site } from "@/lib/site";
+import DiamondMark from "./DiamondMark";
 import { IconClock, IconMail, IconPhone, IconPin } from "./Icons";
 import { Container } from "./ui";
 
@@ -11,8 +12,11 @@ export default function SiteFooter() {
       <Container className="py-16 sm:py-20">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr]">
           <div>
-            <span className="font-display text-[1.5rem] font-extrabold tracking-[-0.03em] text-paper">
-              Clean<span className="text-mint">·</span>Express
+            <span className="flex items-center gap-2.5">
+              <DiamondMark className="h-8 w-8 shrink-0" />
+              <span className="font-display text-[1.5rem] font-extrabold tracking-[-0.03em] text-paper">
+                Clean<span className="text-mint">·</span>Express
+              </span>
             </span>
             <p className="mt-4 max-w-xs text-step--1 leading-relaxed text-paper/65">
               {site.blurb}
