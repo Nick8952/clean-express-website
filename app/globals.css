@@ -201,7 +201,7 @@
 
   /* ── Eyebrow / Kleinschrift-Label ────────────────────────────── */
   .eyebrow {
-    @apply font-mono text-step--1 uppercase tracking-[0.18em] text-ocean/80;
+    @apply font-sans text-step--1 font-semibold uppercase tracking-[0.18em] text-ocean/80;
   }
 
   .block-dark .eyebrow {
@@ -250,7 +250,7 @@
   }
 
   .prose-ce ol {
-    @apply list-decimal marker:font-mono marker:text-mint-deep;
+    @apply list-decimal marker:font-semibold marker:text-mint-deep;
   }
 
   .prose-ce a {

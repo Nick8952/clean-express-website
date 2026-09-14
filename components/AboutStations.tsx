@@ -16,7 +16,7 @@ export default function AboutStations() {
       {stations.map((s, i) => (
         <Reveal key={s.year + s.place} delay={i * 0.06} as="li">
           <div className="flex items-baseline gap-4 border-b border-mist py-4 last:border-none">
-            <span className="w-24 shrink-0 font-mono text-step--1 tabular-nums text-mint-deep">
+            <span className="w-24 shrink-0 font-semibold text-step--1 tabular-nums text-mint-deep">
               {s.year}
             </span>
             <p className="text-step-0">

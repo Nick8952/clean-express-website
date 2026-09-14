@@ -17,7 +17,7 @@ export default function ServiceCard({ service, index }: { service: Service; inde
         href={`/dienstleistungen/#${service.slug}`}
         className="glass-card group flex h-full flex-col gap-4 p-6"
       >
-        <span className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-ocean/50">
+        <span className="font-semibold text-[0.68rem] uppercase tracking-[0.16em] text-ocean/50">
           {String(index + 1).padStart(2, "0")}
         </span>
         <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-ocean/8 text-ocean transition-colors duration-200 group-hover:bg-ocean group-hover:text-paper">

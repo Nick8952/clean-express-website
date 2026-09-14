@@ -6,6 +6,7 @@ import { getPage } from "@/lib/content";
 import { site } from "@/lib/site";
 
 import AboutStations from "@/components/AboutStations";
+import CountUp from "@/components/CountUp";
 import DiamondMark from "@/components/DiamondMark";
 import ReferenceWall from "@/components/ReferenceWall";
 import Reveal from "@/components/Reveal";
@@ -51,7 +52,7 @@ export default function HomePage() {
               </Btn>
             </div>
 
-            <p className="mt-7 inline-flex items-center gap-2 rounded-pill bg-foam px-3.5 py-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-mint-deep">
+            <p className="mt-7 inline-flex items-center gap-2 rounded-pill bg-foam px-3.5 py-2 font-semibold text-[0.68rem] uppercase tracking-[0.14em] text-mint-deep">
               <IconClock className="h-3.5 w-3.5" />
               {site.availability}
             </p>
@@ -63,9 +64,23 @@ export default function HomePage() {
       <Section tone="light" className="py-14 sm:py-16">
         <Container>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-            <Fact value={`seit ${site.foundedYear}`} label="Am Markt in Zürich" />
-            <Fact value="24 / 7" label="Erreichbar, jeden Tag" />
-            <Fact value="5" label="Leistungsbereiche" />
+            <Fact
+              value={
+                <>
+                  seit <CountUp to={Number(site.foundedYear)} />
+                </>
+              }
+              label="Am Markt in Zürich"
+            />
+            <Fact
+              value={
+                <>
+                  <CountUp to={24} /> / <CountUp to={7} />
+                </>
+              }
+              label="Erreichbar, jeden Tag"
+            />
+            <Fact value={<CountUp to={5} />} label="Leistungsbereiche" />
             <Fact value="Privat & Firmen" label="Für beide da" />
           </div>
         </Container>

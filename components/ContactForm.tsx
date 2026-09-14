@@ -27,7 +27,7 @@ export default function ContactForm() {
     >
       {!live && (
         <div className="rounded-2xl border border-dashed border-mint-deep/40 bg-foam px-5 py-4">
-          <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-mint-deep">
+          <p className="font-semibold text-[0.68rem] uppercase tracking-[0.16em] text-mint-deep">
             Demo
           </p>
           <p className="mt-1.5 text-step--1 leading-relaxed text-ink-soft">

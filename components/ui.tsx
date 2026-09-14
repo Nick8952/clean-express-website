@@ -131,11 +131,11 @@ export function Btn({
   );
 }
 
-/** Kennzahl / Faktenzeile – Zahl in der Utility-Schrift, Label darunter. */
-export function Fact({ value, label }: { value: string; label: string }) {
+/** Kennzahl / Faktenzeile – grosse Zahl (optional hochzählend), Label darunter. */
+export function Fact({ value, label }: { value: ReactNode; label: string }) {
   return (
     <div>
-      <p className="font-mono text-step-2 tabular-nums">{value}</p>
+      <p className="font-display text-step-2 font-extrabold tabular-nums">{value}</p>
       <p className="mt-1 text-step--1 uppercase tracking-[0.12em] opacity-60">
         {label}
       </p>

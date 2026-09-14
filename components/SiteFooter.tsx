@@ -21,7 +21,7 @@ export default function SiteFooter() {
             <p className="mt-4 max-w-xs text-step--1 leading-relaxed text-paper/65">
               {site.blurb}
             </p>
-            <p className="mt-5 inline-flex items-center gap-2 rounded-pill bg-white/10 px-3.5 py-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-mint">
+            <p className="mt-5 inline-flex items-center gap-2 rounded-pill bg-white/10 px-3.5 py-2 font-semibold text-[0.68rem] uppercase tracking-[0.14em] text-mint">
               <IconClock className="h-3.5 w-3.5" />
               {site.availability}
             </p>

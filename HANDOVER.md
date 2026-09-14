@@ -270,8 +270,9 @@ dem interaktiven Wasser-Hero statt mit Stockfotos.
 Richtung „Klinisch-Frisch": Weiss/Papier-Grund, Original-Kobaltblau `#0132AF`
 und -Hellblau `#628FFF` (aus dem CSS von clean-express.ch), ergänzt um einen
 neuen Mint-Frischeakzent `#17C9AA`. Glaskarten (Glasmorphismus) für Inhalte auf
-dem Wasser-Hero. Schriftpaar Manrope (Display) + Plus Jakarta Sans (Fliesstext)
-+ Space Mono (Auszeichnungen).
+dem Wasser-Hero. **Eine** Schriftfamilie sitewide – Manrope, von Fliesstext (400)
+bis Überschriften (800) – auf Kundenwunsch vereinheitlicht (14.09.2026; vorher
+drei Fonts: Manrope + Plus Jakarta Sans + Space Mono).
 
 **3D/Bewegung** – bewusst als Canvas 2D statt WebGL umgesetzt (siehe
 `components/WaterHero.tsx`): ein interaktiver Wasser-/Blasen-Hintergrund auf
@@ -292,7 +293,7 @@ diesen Einsatzzweck nicht wahrnehmbar. Alles respektiert
 | Repository | `github.com/Nick8952/clean-express-website` (öffentlich – GitHub Pages verlangt das bei Gratis-Konten) |
 | Hosting | GitHub Pages, gratis, keine Laufzeit |
 | Domain | `clean-express.ch` gehört dem Kunden (Registrar prüfen) |
-| Schriften | Manrope, Plus Jakarta Sans, Space Mono – Open Font License, frei nutzbar |
+| Schriften | Manrope – Open Font License, frei nutzbar |
 | Cloudflare Worker | nur für den CMS-Login, gratis |
 | Web3Forms | Gratis-Tarif, 250 Nachrichten pro Monat |
 

@@ -28,9 +28,14 @@ const config: Config = {
         foam: "#F3FBF9", // Mint-Tint für Badges
       },
       fontFamily: {
-        display: ["var(--font-display)", "Manrope", "sans-serif"],
-        sans: ["var(--font-body)", "Plus Jakarta Sans", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "Space Mono", "ui-monospace", "monospace"],
+        // Eine Schriftfamilie für Fliesstext/Überschriften (Manrope, aus
+        // app/layout.tsx) – display/sans zeigen bewusst auf dieselbe
+        // Variable. `mono` bleibt ein echter Monospace-Stack (Codex-Review-
+        // Fund: sonst verliert eine künftige tabellarische/Code-Stelle
+        // stillschweigend ihre Festbreiten-Schrift).
+        display: ["var(--font-primary)", "Manrope", "sans-serif"],
+        sans: ["var(--font-primary)", "Manrope", "sans-serif"],
+        mono: ["ui-monospace", "SFMono-Regular", "monospace"],
       },
       fontSize: {
         // Fluide Skala – Schritt 0 ist der Fliesstext.
