@@ -309,6 +309,21 @@
     }
   }
 
+  /* Sanftes Schweben für den grossen Hero-Diamant (app/page.tsx). */
+  .hero-diamond-float {
+    animation: hero-diamond-float 6s ease-in-out infinite;
+  }
+
+  @keyframes hero-diamond-float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+      transform: translateY(-18px) rotate(2deg);
+    }
+  }
+
   /* Hairline im Marken-Mint – neben den Glaskarten das einzige
      wiederkehrende Zierelement. */
   .rule-mint {

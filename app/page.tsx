@@ -57,6 +57,21 @@ export default function HomePage() {
               {site.availability}
             </p>
           </div>
+
+          {/* Grosser Diamant im offenen Wasser rechts – vom Firmenfahrzeug
+              übernommenes Markenzeichen, hier als Hero-Blickfang. Schwebt
+              sanft (CSS, respektiert prefers-reduced-motion global). */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute right-6 top-1/2 hidden -translate-y-1/2 lg:block xl:right-16"
+          >
+            <div className="hero-diamond-float">
+              <DiamondMark
+                className="h-64 w-64 drop-shadow-[0_50px_90px_rgba(1,50,175,0.5)] xl:h-80 xl:w-80"
+                animated
+              />
+            </div>
+          </div>
         </Container>
       </section>
 
